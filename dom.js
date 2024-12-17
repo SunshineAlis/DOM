@@ -10,55 +10,65 @@
 // 9. Create p tag that contains "Hello wolrd title" and change the color when element mouseover
 // 10. Add class name using classList
 // const parent=document.getElementById("parent-container");
-document.body.style.width="100%";
-document.body.style.textAlign="center";
+document.body.style.width = "100%";
+document.body.style.textAlign = "center";
 
-const loginTitle=document.createElement("p");
-loginTitle.innerHTML="Login";
-loginTitle.style.fontsize="60px";
-loginTitle.style.fontWeight="bold";
+const loginTitle = document.createElement("p");
+loginTitle.innerHTML = "Login";
+loginTitle.style.fontsize = "60px";
+loginTitle.style.fontWeight = "bold";
 document.getElementById("parent_container").appendChild(loginTitle);
 
-const emailContainer=document.createElement("div")
-emailContainer.id="emailContainer";
+const emailContainer = document.createElement("div");
+emailContainer.id = "email_Container";
+document.getElementById("parent_container").appendChild(emailContainer);
 
-const emailTitle=document.createElement("p");
-emailTitle.innerHTML="email";
-document.getElementById("parent_container").appendChild(emailTitle);
+const passwordContainer = document.createElement("div");
+passwordContainer.id = "password_Container";
+document.getElementById("parent_container").appendChild(passwordContainer); //
 
-const emailInput=document.createElement("input");
-document.getElementById("emailContainer").appendChild(emailInput);
+const emailTitle = document.createElement("p");
+emailTitle.innerHTML = "email";
+document.getElementById("email_Container").appendChild(emailTitle);
 
-const passwordTitle=document.createElement("p");
-passwordTitle.innerHTML="password";
-document.getElementById("parent_container").appendChild(passwordTitle);
+const emailInput = document.createElement("input");
+document.getElementById("email_Container").appendChild(emailInput);
 
-const passwordInput=document.createElement("input");
-document.getElementById("parent_container").appendChild(passwordInput);
+const passwordTitle = document.createElement("p");
+passwordTitle.innerHTML = "password";
+document.getElementById("password_Container").appendChild(passwordTitle);
 
-const button=document.createElement("p");
-button.innerHTML="submit";
-button.style.background="green";
-button.style.padding="5px";
-button.style.width="50px";
-button.style.margin="auto";
-button.style.marginTop="10px";
+const passwordInput = document.createElement("input");
+document.getElementById("password_Container").appendChild(passwordInput);
+
+const button = document.createElement("p");
+button.innerHTML = "submit";
+button.style.background = "green";
+button.style.padding = "5px";
+button.style.width = "50px";
+button.style.margin = "auto";
+button.style.marginTop = "10px";
 document.getElementById("parent_container").appendChild(button);
-button.addEventListener("click", ()=>{
-    if (emailInput.value.includes("@gmail.com")){
-        console.log("=========================");
-        console.log(true);
-        console.log("==========================");
-    }else{const warning = document.createElement("p");
-        warning.innerHTML="Please enter valid email";
-        warning.style.color="red";
-        document.getElementById("parent_container").appendChild(warning);
-    }
-    if(passwordInput.value.length>=8){
-        console.log("=========================");
-        console.log(true);
-        console.log("==========================");
-    }else{
-        const warning=document.createElement("p");
-    }
-})
+button.addEventListener("click", () => {
+  if (
+    emailInput.value.includes("@gmail.com") &&
+    passwordInput.value.length >= 8
+  ) {
+    alert;
+  } else {
+    const warning = document.createElement("p");
+    warning.innerHTML = "Please enter valid email";
+    warning.style.color = "red";
+    document.getElementById("email_Container").appendChild(warning);
+  }
+  if (passwordInput.value.length >= 8) {
+    console.log("=========================");
+    console.log(true);
+    console.log("==========================");
+  } else {
+    const warning = document.createElement("p");
+    warning.innerHTML = "Password should contain 8 character";
+    warning.style.color = "red";
+    document.getElementById("password_Container").appendChild(warning);
+  }
+});
