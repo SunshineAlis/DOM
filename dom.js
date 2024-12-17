@@ -19,37 +19,46 @@ loginTitle.style.fontsize="60px";
 loginTitle.style.fontWeight="bold";
 document.getElementById("parent_container").appendChild(loginTitle);
 
+const emailContainer=document.createElement("div")
+emailContainer.id="emailContainer";
+
 const emailTitle=document.createElement("p");
 emailTitle.innerHTML="email";
 document.getElementById("parent_container").appendChild(emailTitle);
 
 const emailInput=document.createElement("input");
-document.getElementById("parent_container").appendChild(emailInput);
+document.getElementById("emailContainer").appendChild(emailInput);
 
 const passwordTitle=document.createElement("p");
 passwordTitle.innerHTML="password";
 document.getElementById("parent_container").appendChild(passwordTitle);
 
-const passwordInput=document.createElement(input);
+const passwordInput=document.createElement("input");
 document.getElementById("parent_container").appendChild(passwordInput);
 
-const button=document.createElement(button);
-button.innerHTML="submit"
+const button=document.createElement("p");
+button.innerHTML="submit";
 button.style.background="green";
 button.style.padding="5px";
 button.style.width="50px";
 button.style.margin="auto";
 button.style.marginTop="10px";
 document.getElementById("parent_container").appendChild(button);
-
 button.addEventListener("click", ()=>{
-    if(emailInput.value.includes("@gmail.com")){
-        console.log("=================");
+    if (emailInput.value.includes("@gmail.com")){
+        console.log("=========================");
         console.log(true);
-        console.log("===================");
+        console.log("==========================");
     }else{const warning = document.createElement("p");
         warning.innerHTML="Please enter valid email";
         warning.style.color="red";
         document.getElementById("parent_container").appendChild(warning);
+    }
+    if(passwordInput.value.length>=8){
+        console.log("=========================");
+        console.log(true);
+        console.log("==========================");
+    }else{
+        const warning=document.createElement("p");
     }
 })
